@@ -50,8 +50,8 @@ export function NotificationCard({ notification, viewed, onToggleViewed }: CardP
       }}
     >
       <Stack spacing={1.5}>
-        <Stack direction="row" alignItems="flex-start" justifyContent="space-between" spacing={1.5}>
-          <Stack direction="row" alignItems="center" spacing={1} sx={{ minWidth: 0 }}>
+        <Stack direction="row" spacing={1.5} sx={{ alignItems: "flex-start", justifyContent: "space-between" }}>
+          <Stack direction="row" spacing={1} sx={{ alignItems: "center", minWidth: 0 }}>
             {!viewed && <FiberManualRecordIcon color="primary" sx={{ fontSize: 12, flexShrink: 0 }} />}
             <Typography variant="h6" component="h2" sx={{ fontSize: { xs: 17, sm: 19 }, overflowWrap: "anywhere" }}>
               {notification.Message}
@@ -68,7 +68,7 @@ export function NotificationCard({ notification, viewed, onToggleViewed }: CardP
           </Tooltip>
         </Stack>
 
-        <Stack direction="row" spacing={1} alignItems="center" useFlexGap flexWrap="wrap">
+        <Stack direction="row" spacing={1} useFlexGap sx={{ alignItems: "center", flexWrap: "wrap" }}>
           <Chip
             icon={typeIcons[notification.Type]}
             color={typeColors[notification.Type]}
@@ -125,7 +125,7 @@ export function SummaryBar({ notifications, viewedIds }: SummaryProps) {
 function Metric({ label, value, icon }: { label: string; value: number; icon: ReactNode }) {
   return (
     <Box sx={{ minWidth: { sm: 104 }, flex: 1 }}>
-      <Stack direction="row" alignItems="center" spacing={1} color="text.secondary">
+      <Stack direction="row" spacing={1} color="text.secondary" sx={{ alignItems: "center" }}>
         {icon}
         <Typography variant="body2">{label}</Typography>
       </Stack>

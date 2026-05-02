@@ -88,7 +88,7 @@ export default function PriorityPage() {
       <Container maxWidth="md">
         <Stack spacing={3}>
           <Paper variant="outlined" sx={{ p: { xs: 2.5, md: 3 } }}>
-            <Stack direction={{ xs: "column", sm: "row" }} justifyContent="space-between" spacing={2}>
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ justifyContent: "space-between" }}>
               <Box>
                 <Typography variant="overline" color="primary" sx={{ fontWeight: 800 }}>
                   Priority View
@@ -109,7 +109,7 @@ export default function PriorityPage() {
           <SummaryBar notifications={notifications} viewedIds={viewedIds} />
 
           <Paper variant="outlined" sx={{ p: 2 }}>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} alignItems={{ sm: "center" }}>
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ alignItems: { sm: "center" } }}>
               <TuneIcon color="primary" />
               <FormControl size="small" sx={{ minWidth: 170 }}>
                 <InputLabel id="priority-type-label">Type</InputLabel>
@@ -156,7 +156,7 @@ export default function PriorityPage() {
                     });
                   }}
                 >
-                  {[3, 5, 8, 10].map((item) => (
+                  {[5, 8, 10].map((item) => (
                     <MenuItem key={item} value={item}>
                       {item}
                     </MenuItem>
@@ -169,7 +169,7 @@ export default function PriorityPage() {
           {error && <Alert severity="error">{error}</Alert>}
 
           {loading ? (
-            <Stack alignItems="center" sx={{ py: 8 }}>
+            <Stack sx={{ alignItems: "center", py: 8 }}>
               <CircularProgress />
             </Stack>
           ) : (

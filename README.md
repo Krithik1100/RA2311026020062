@@ -12,3 +12,7 @@ Campus hiring evaluation frontend built with Next.js, React, and Material UI.
 - Uses Material UI for layout, controls, cards, chips, icons, loading states, and alerts.
 - Uses project logging middleware/helpers instead of console logging.
 - Runs on `http://localhost:3000` with `npm run dev`.
+
+## Local Setup
+
+Create `.env.local` from `.env.example` and set `AFFORDMED_ACCESS_TOKEN` to the bearer token from the evaluation service.

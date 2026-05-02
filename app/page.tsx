@@ -102,7 +102,7 @@ export default function Home() {
       <Container maxWidth="lg">
         <Stack spacing={3}>
           <Paper variant="outlined" sx={{ p: { xs: 2.5, md: 3 } }}>
-            <Stack direction={{ xs: "column", md: "row" }} justifyContent="space-between" spacing={2}>
+            <Stack direction={{ xs: "column", md: "row" }} spacing={2} sx={{ justifyContent: "space-between" }}>
               <Box>
                 <Typography variant="overline" color="primary" sx={{ fontWeight: 800 }}>
                   Affordmed
@@ -114,7 +114,7 @@ export default function Home() {
                   Track events, result updates, and placement alerts from the notification service.
                 </Typography>
               </Box>
-              <Stack direction="row" spacing={1} alignItems="center">
+              <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
                 <Button component={Link} href="/priority" variant="contained" startIcon={<PriorityHighIcon />}>
                   Priority
                 </Button>
@@ -128,7 +128,7 @@ export default function Home() {
           <SummaryBar notifications={notifications} viewedIds={viewedIds} />
 
           <Paper variant="outlined" sx={{ p: 2 }}>
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} alignItems={{ sm: "center" }}>
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ alignItems: { sm: "center" } }}>
               <FilterAltIcon color="primary" />
               <FormControl size="small" sx={{ minWidth: 170 }}>
                 <InputLabel id="type-filter-label">Type</InputLabel>
@@ -190,7 +190,7 @@ export default function Home() {
           {error && <Alert severity="error">{error}</Alert>}
 
           {loading ? (
-            <Stack alignItems="center" sx={{ py: 8 }}>
+            <Stack sx={{ alignItems: "center", py: 8 }}>
               <CircularProgress />
             </Stack>
           ) : sortedNotifications.length ? (
@@ -203,7 +203,7 @@ export default function Home() {
                   onToggleViewed={toggleViewed}
                 />
               ))}
-              <Stack alignItems="center" sx={{ pt: 1 }}>
+              <Stack sx={{ alignItems: "center", pt: 1 }}>
                 <Pagination
                   count={5}
                   page={page}
